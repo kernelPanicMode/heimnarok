@@ -7,8 +7,7 @@ Heimnarok™ is a privacy-first, self-hosted household management app for the mo
 
 **No tracking. No cloud. No nonsense. Odin approved. ⚡**
 
-🔗 **[Try the live demo](https://kernelPanicMode.github.io/heimnarok/demo.html)** — Norse-themed demo data included. PIN: `1234`
-
+> ⚡ **[Try the live demo →](https://kernelPanicMode.github.io/heimnarok/demo/)** — No login hassle. PIN: `1234`. Norse gods and mjød included.
 ---
 
 ## The Family Tree — Cashnarok vs. Heimnarok™
