@@ -1,4 +1,3 @@
-# Heimnarok™
 ### *Valhalla Certified™ – For Mortal Homes*
 
 > *"Even the All-Father needs to keep track of the mjød budget."*
@@ -7,12 +6,25 @@ Heimnarok™ is a privacy-first, self-hosted household management app for the mo
 
 **No tracking. No cloud. No nonsense. Odin approved. ⚡**
 
-> ⚡ **[Try the live demo →](https://kernelPanicMode.github.io/heimnarok/demo/)** — No login hassle. PIN: `1234`. Norse gods and mjød included.
+🔗 **[Try the live demo](https://kernelPanicMode.github.io/heimnarok/demo/)** — Norse-themed demo data included. PIN: `1234`
+
 ---
 
-## The Family Tree — Cashnarok vs. Heimnarok™
+## The Heimnarok™ Series
 
-Heimnarok™ is the elder sibling of **[Cashnarok](https://github.com/kernelPanicMode/cashnarok)** — the lean, mean, budget-only warrior that started it all.
+Heimnarok™ is a single-file SPA platform. All apps in the series share the same visual identity, theme system, i18n engine, and component library — built from a common base template.
+
+| App | Purpose | Status |
+|-----|---------|--------|
+| **Heimnarok™** | Full household management | ✅ Released |
+| **Cashnarok** | Budget-only, lightweight sibling | ✅ Released |
+| *(new apps)* | Built from `heimnarok-template.html` | 🔨 In development |
+
+`heimnarok-template.html` in this repository is the official starting point for new apps in the series — includes all CSS tokens, component styles, the full 11-language i18n engine, theme controls, module navigation, modal system, and localStorage-based persistence. Ready to fork and build.
+
+---
+
+## Heimnarok™ vs. Cashnarok
 
 | | Cashnarok ⚔️ | Heimnarok™ 🛡️ |
 |---|---|---|
@@ -33,8 +45,6 @@ Heimnarok™ is the elder sibling of **[Cashnarok](https://github.com/kernelPani
 
 Think of Cashnarok as Mjølner — compact and devastating. Heimnarok™ is the entire Asgard armory.
 
-If you just need household budgeting and nothing else, Cashnarok has you covered. If you want to run the whole hall — meals, vehicles, tasks, the freezer Loke definitely hasn't tampered with — Heimnarok™ is your longship.
-
 ---
 
 ## Features
@@ -47,7 +57,7 @@ Monthly budget sheets with income and expense tracking. Compare budgeted vs. act
 - Per-member assignment and owner filter
 - Monthly notes + permanent sticky note
 - Savings goal widget on the budget page
-- Vehicle reminder widget (upcoming EU inspection / service)
+- Vehicle reminder widget (upcoming EU inspection / service) with colour-coded urgency
 
 ### 📊 Statistics
 Because even Thor wants to know why the lightning bolt bill keeps going up.
@@ -78,12 +88,12 @@ Multiple named lists with drag-to-reorder. Check items off, clear checked items 
 Tasks with title, description, due date, and colour label. Filter by status and owner. Searchable via global search (Ctrl+K). Unlike Loke's promises, these actually get done.
 
 ### 🔐 Information Vault
-Secure local storage for sensitive household information — passwords, insurance policy numbers, activation codes, WiFi credentials. Accordion view. Searchable. No cloud. Only Odin can see it (and he's got one eye on it at all times).
+Secure local storage for sensitive household information — passwords, insurance policy numbers, activation codes, WiFi credentials. Category sidebar with entry count badges. Accordion view. Searchable. No cloud. Only Odin can see it (and he's got one eye on it at all times).
 
 ### 🚗 Vehicles
 The most thorough vehicle module you'll find outside of Statens Vegvesen. Supports cars, motorcycles, ATVs, snowmobiles, trailers, and anything else with wheels (or hooves).
 
-**10-tab detail view per vehicle:**
+**11-tab detail view per vehicle:**
 
 | Tab | Contents |
 |-----|----------|
@@ -91,18 +101,21 @@ The most thorough vehicle module you'll find outside of Statens Vegvesen. Suppor
 | 📋 Custom fields | Add your own key/value fields |
 | 📝 Notes | Freetext note with auto-save |
 | 🔩 Repairs | Log with date, odometer, description, cost + yearly cost chart |
-| 🛠 Service | Service log + cost report with chart |
-| ⛽ Fuel | Fill-up log with L/100km calculation, stat cards, three chart types |
+| 🛠 Service | Service log + cost report with chart + next service date tracking |
+| ⛽ Fuel | Fill-up log with L/100km calculation, stat cards, three chart types, period filter |
 | ✅ EU Inspection | Inspection log with next due date |
-| 🔵 Tyres | Summer/winter tyre sets, tyre pressure, tyre inventory, change log, rotation log |
+| 🔵 Tyres | Summer/winter tyre sets, tyre pressure, tyre inventory with age tracking, change log, rotation log |
 | 📄 Documents | Upload and view documents and images |
 | 🔔 Reminders | Toggle EU and service reminders per vehicle |
+| 💰 Economy | Total ownership cost estimation — forward-looking stacked bar chart |
 
-**Summary strip** — colour-coded status for next EU inspection, last service, last fill-up, last tyre change, and last rotation.
+**Summary strip** — colour-coded status for next EU inspection, next/last service, last fill-up, last tyre change, and last tyre rotation.
 
 **Cost reports** (Repairs & Service): total, average per year, average per event, highest single entry — bar chart by calendar year with a dashed average line. Period filter: 1Y / 3Y / 6Y / 8Y / 10Y / All.
 
-**Fuel statistics**: average L/100km, kr/km, total cost, total litres, estimated range, fill-up percentage, CO₂ estimate. Efficiency chart with green/red colouring against average. Three chart modes: monthly cost, monthly litres, L/100km trend.
+**Fuel statistics**: average per month (highlighted), average L/100km, kr/km, total cost, total litres, estimated range, fill-up percentage. Efficiency chart with green/red colouring against average. Three chart modes: monthly cost, monthly litres, L/100km trend. Period filter: 1Y / 3Y / 6Y / 8Y / 10Y / All.
+
+**Economy tab**: fixed monthly costs (loan, insurance, toll, parking, custom) with optional end dates — cost disappears from the chart automatically when the end date passes. Fuel and repair/service costs estimated from actual log data with the exact calculation shown. Forward-looking stacked bar chart (6M / 1Y / 2Y … 10Y / All) breaks costs into colour-coded categories. EV support: home charging estimated from km × kWh × price, plus separate fast-charging / subscription field. Tyre rotation and next service tracking integrated.
 
 ### 🧊 Freezer Inventory
 Log frozen items with storage date, best-before date, and notes. Freshness indicators (green / yellow warning / red expired). Configurable thresholds per household. Because nobody wants to discover Loke's mystery meat from 2024.
@@ -117,8 +130,9 @@ Search across budget entries, receipts, tasks, vault, vehicles, meal recipes, an
 
 ## Interface
 
-- **11 languages** — Norwegian (Bokmål & Nynorsk), English, German, Spanish, French, Danish, Swedish, Old Norse, Viking, Kebabnorsk, and Trumpese
+- **11 languages** — Norwegian (Bokmål), Nynorsk, English, German, Spanish, French, Danish, Swedish, Viking (Old Norse), Kebabnorsk, and Trumpese
 - **Dark / Light mode** — saved per user
+- **High contrast mode** — for accessibility
 - **Currency selector** — NOK, SEK, DKK, ISK, EUR, USD, GBP, CHF
 - **Module toggle** — enable/disable individual modules in settings
 - **Per-user settings** — language, theme, currency, and modules saved per account (user mode)
@@ -142,7 +156,7 @@ No Yggdrasil required. Just a basic LAMP server.
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Vanilla HTML / CSS / JavaScript — no frameworks |
+| Frontend | Vanilla HTML / CSS / JavaScript — no frameworks (~13 500 lines) |
 | Charts | Custom SVG + Chart.js 4 (statistics module) |
 | Backend | PHP 8 — single `api.php` REST endpoint |
 | Database | MariaDB via PDO |
@@ -281,15 +295,17 @@ Install Tailscale on your phone or laptop, log in with the same account — the 
 .
 ├── README.md
 ├── CHANGELOG.md
+├── heimnarok-template.html    # Series base template — start here for new apps
 └── server/
-    ├── index.html         # The entire frontend (~12 000 lines of vanilla JS)
-    ├── demo.html          # Standalone demo with Norse-themed mock data
-    ├── api.php            # REST API — all data and file operations
-    ├── db.php             # Database connection (⚠ generated by install.sh, never committed)
-    ├── install.php        # Web installer for first-time setup
-    ├── install.sh         # Automated setup script for Debian 12 LXC
-    ├── .htaccess          # Apache: SPA routing + security rules
-    └── howto.html         # Installation guide with troubleshooting
+    ├── index.html             # The entire frontend (~13 500 lines of vanilla JS)
+    ├── demo/
+    │   └── index.html         # Standalone demo with Norse-themed mock data
+    ├── api.php                # REST API — all data and file operations
+    ├── db.php                 # Database connection (⚠ generated by install.sh, never committed)
+    ├── install.php            # Web installer for first-time setup
+    ├── install.sh             # Automated setup script for Debian 12 LXC
+    ├── .htaccess              # Apache: SPA routing + security rules
+    └── howto.html             # Installation guide with troubleshooting
 ```
 
 ---
@@ -314,14 +330,14 @@ meal_plan             (id, week_start, day_index, recipe_id → meal_recipes)
 shopping_lists        (id, name, sort_order)
 shopping_items        (id, list_id → shopping_lists, name, checked, sort_order)
 tasks                 (id, title, description, due_date, color, done, created_at)
-vault_categories      (id, name, sort_order)
+vault_categories      (id, name, icon, sort_order)
 vault_entries         (id, category_id → vault_categories, title, value, note)
 vehicles              (id, reg_nr, brand, model, year, fuel, color, motor, vin,
                        purchase_date, tyre_summer_front, tyre_summer_rear,
                        tyre_winter_front, tyre_winter_rear, tyre_pressure_front,
                        tyre_pressure_rear, remind_service, remind_eu,
                        next_service_date, archived, archived_at)
-vehicle_service       (id, vehicle_id → vehicles, service_date, km_stand, description, cost)
+vehicle_service       (id, vehicle_id → vehicles, service_date, km_stand, description, cost, next_service_date)
 vehicle_repairs       (id, vehicle_id → vehicles, repair_date, km_stand, description, cost)
 vehicle_eu            (id, vehicle_id → vehicles, inspection_date, result, next_due, notes)
 vehicle_fuel          (id, vehicle_id → vehicles, fuel_date, km_stand, liters, total_cost)
@@ -330,6 +346,11 @@ vehicle_tyre_log      (id, vehicle_id → vehicles, change_date, km_stand, tyre_
 vehicle_tyre_rotation (id, vehicle_id → vehicles, rotation_date, km_stand, notes)
 vehicle_custom_fields (id, vehicle_id → vehicles, label, value, sort_order)
 vehicle_documents     (id, vehicle_id → vehicles, filename, original_name, mime_type, uploaded_at)
+vehicle_economy       (id, vehicle_id → vehicles, monthly_payment, monthly_insurance, monthly_toll,
+                       monthly_parking, payment_end_date, insurance_end_date, toll_end_date,
+                       parking_end_date, monthly_km_ev, avg_consumption_ev, electricity_price_ev,
+                       monthly_fuel_override, monthly_maint_override, monthly_charging_ev,
+                       custom_costs JSON, updated_at)
 freezer_storages      (id, name, capacity_note)
 freezer_items         (id, storage_id → freezer_storages, name, quantity, date_frozen, best_before, notes)
 sbudgets              (id, name, description, category, is_goal, goal_amount, created_at)
@@ -348,7 +369,7 @@ See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 Personal use.
 
-© 2026 Roger Johannesen — Made in Norway 🇳🇴
+© 2026 Roger Johannesen — Made in Norway 🇳🇴  
 Heimnarok™ — *Valhalla Certified™ – For Mortal Homes*
 
 > *May your budgets be balanced, your freezer well-stocked, and your Bifrost always operational.*
